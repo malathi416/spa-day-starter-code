@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<form method="post">
+    <div class="form-group">
+        <label>Welcome
+            <p th:text="${name}"></p>
+        </label>
+    </div>
+    <div class="form-group">
+        <a th:href="@{/}">SignUp Appointment</a>
+    </div>
+</form>
+</body>
+</html>
