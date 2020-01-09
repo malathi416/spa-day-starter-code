@@ -10,7 +10,6 @@ public class User {
 
     private static int nextId = 1;
     @NotBlank(message = "Username is required")
-    @NotNull
     @Size(min = 5,max = 15,message = "User name must be between 5 and 15 characters")
     private String username;
     @Email(message = "Invalid email")
@@ -19,7 +18,7 @@ public class User {
     @Size(min = 6,message = "Password should be atleast 6 characters")
     @NotNull
     private String password;
-    @NotBlank(message="verify is required")
+//    @NotBlank(message="verify is required")
     @NotNull(message = "Passwords do not match")
     private String verifyPassword;
 
@@ -73,7 +72,7 @@ public class User {
         checkPassword();
     }
     private void checkPassword(){
-        if((this.getPassword() != null) && (this.getVerifyPassword() != null) && (!this.getPassword().equals(this.getVerifyPassword()))){
+        if(!this.getPassword().equals(this.getVerifyPassword())){
             this.verifyPassword = null;
         }
     }
